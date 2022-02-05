@@ -1,9 +1,14 @@
 const port = 8000;
 const express = require("express");
+const ejs = require("ejs");
 const app = express();
+const path = require("path");
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 app.get("/", function (req, res) {
-  res.send("Welcome to worldbook");
+  res.render("signup");
 });
 app.listen(port, function (err) {
   if (err) {
