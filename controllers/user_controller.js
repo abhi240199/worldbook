@@ -17,12 +17,26 @@ module.exports.create = function (req, res) {
     }
   });
 };
+module.exports.createSession = function (req, res) {
+  console.log("create session");
+  return res.redirect("/");
+};
 module.exports.sigIn = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.render("home");
+  }
   return res.render("signin");
 };
 module.exports.sigUp = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.render("home");
+  }
   return res.render("signup");
 };
 module.exports.profile = function (req, res) {
   return res.render("profile");
+};
+module.exports.logOut = function (req, res) {
+  req.logout();
+  return res.redirect("/user/sign-in");
 };
