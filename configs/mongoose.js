@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 //   useUnifiedTopology: true,
 // });
 mongoose.connect(
-  "mongodb+srv://worldbookabhi:Coaderabhi@cluster0.zwitd.mongodb.net/test",
+  "mongodb://worldbookabhi:Coaderabhi@cluster0-shard-00-00.zwitd.mongodb.net:27017,cluster0-shard-00-01.zwitd.mongodb.net:27017,cluster0-shard-00-02.zwitd.mongodb.net:27017/Worldbook_Database?ssl=true&replicaSet=atlas-x1i2l4-shard-0&authSource=admin&retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
